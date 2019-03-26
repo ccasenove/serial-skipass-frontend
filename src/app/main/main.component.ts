@@ -12,16 +12,18 @@ const stationId = '666';
 export class MainComponent implements OnInit {
 
   form: FormGroup;
+  stations = [];
   
   constructor(
     private formBuilder: FormBuilder,
     private forfaitService: ForfaitService) { 
       this.form = formBuilder.group({
-        station: '1'
+        station: 1
       })
     }
 
   ngOnInit() {
+    this.forfaitService.getStations().subscribe(stations => this.stations = stations);
   }
 
   start() {

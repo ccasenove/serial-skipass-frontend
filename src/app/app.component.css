@@ -8,10 +8,10 @@
     background-size: 100%;
     height: fit-content;
     text-align: center;
-    font-size: 38pt;
-    font-family: "Delimax";
 }
 
 .banner h1 {
-    margin: 0;
+    font-family: "Delimax";
+    font-size: 10rem;
+    padding: 50px;margin: 0;
 }
