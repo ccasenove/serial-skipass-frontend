@@ -1,0 +1,14 @@
+<form [formGroup]="form">
+  <label for="select-station">Choisir la station: </label>
+  <select id="select-station" formControlName="station">
+    <option value="1">Les menuires</option>
+    <option value="2">La Feclaz</option>
+  </select>
+
+  <p>
+    <button (click)="start()">Démarrer</button>
+  </p>
+  <p>
+    <button (click)="stop()">Arrêter</button>
+  </p>
+</form>

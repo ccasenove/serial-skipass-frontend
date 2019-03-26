@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Delimax";
+    src: url("/assets/Delimax.ttf");
+}
+
+.banner {
+    background-image: url("/assets/montagne.jpg");
+    background-size: 100%;
+    height: fit-content;
+    text-align: center;
+    font-size: 38pt;
+    font-family: "Delimax";
+}
+
+.banner h1 {
+    margin: 0;
+}
