@@ -5,13 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-import { HistoriqueComponent } from './historique/historique.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent,
-    HistoriqueComponent
+    MainComponent
   ],
   imports: [
     BrowserModule,

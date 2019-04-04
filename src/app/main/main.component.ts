@@ -23,14 +23,14 @@ export class MainComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.forfaitService.getStations().subscribe(stations => this.stations = stations);
+    this.forfaitService.getResorts().subscribe(stations => this.stations = stations);
   }
 
   start() {
-    this.forfaitService.startConso(this.form.value.station).subscribe(res => console.log(res));
+    this.forfaitService.start(+this.form.value.station).subscribe(res => console.log(res));
   }
 
   stop() {
-    this.forfaitService.stopConso().subscribe(res => console.log(res));
+    this.forfaitService.stop().subscribe(res => console.log(res));
   }
 }

@@ -13,15 +13,15 @@ export class ForfaitService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public startConso(stationId: number) {
+  public start(stationId: number) {
     return this.httpClient.put(`${API_ROOT}/forfaits/${FORFAIT_ID}/start`, stationId);
   }
 
-  public stopConso() {
+  public stop() {
     return this.httpClient.put(`${API_ROOT}/forfaits/${FORFAIT_ID}/stop`, null);
   }
 
-  public getStations() {
+  public getResorts() {
     return of([{id: 1, name: 'La Clusaz'},{id: 2, name: 'La Feclaz'}, {id: 3, name: 'Le revard'}]);
   }
 }

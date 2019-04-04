@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main/main.component';
-import { HistoriqueComponent } from './historique/historique.component';
 
 const routes: Routes = [
   {
@@ -9,10 +8,6 @@ const routes: Routes = [
     component: MainComponent
   },
   {
-    path: 'historique',
-    component: HistoriqueComponent
-  },
-  { 
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
