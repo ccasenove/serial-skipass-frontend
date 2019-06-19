@@ -1,0 +1,46 @@
+<div class="p-4 d-flex flex-row justify-content-start">
+  <h2 class="skipass-invoice">Facture du {{monthInvoice?.invoicePeriodStartDate | date:'dd/MM/yyyy'}} au {{monthInvoice?.invoicePeriodEndDate | date:'dd/MM/yyyy'}}</h2>
+</div>
+<div class="p-4 d-flex flex-row justify-content-start">
+  <div>
+      <ngx-datatable
+        [rows]="monthInvoice?.invoiceSessions"
+        [rowHeight]="'auto'"
+        [sortType]="'multi'"
+        [columnMode]="'standard'"
+        [headerHeight]="50">
+          <ngx-datatable-column prop="idSession" name="Session" [width]="400">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <strong>{{value}}</strong>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column prop="idResort" name="Station">
+            <ng-template let-column="column" let-sort="sortFn" ngx-datatable-header-template>
+              <span (click)="sort()">{{column.name}}</span>
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              <strong>{{resortIdNameMap.get(value)}}</strong>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column prop="startDate" name="Date de début">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <strong>{{value | date:'dd/MM/yyyy HH:mm'}}</strong>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column prop="endDate" name="Date de fin">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <strong>{{value | date:'dd/MM/yyyy HH:mm'}}</strong>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column prop="skiSessionCost" name="Coût de la session">
+            <ng-template let-value="value" ngx-datatable-cell-template>
+              <strong>{{value | number:'.2'}} €</strong>
+            </ng-template>
+          </ngx-datatable-column>
+      </ngx-datatable>
+  </div>
+</div>
+<div class="p-4 d-flex flex-column justify-content-start">
+  <div class="skipass-gross-amount d-flex">Total H.C. : {{monthInvoice?.invoiceGrossAmount | number:'.2'}} €</div>
+  <div class="skipass-net-amount d-flex">Total T.T.C. : {{monthInvoice?.invoiceNetAmount | number:'.2'}} € </div>
+</div>

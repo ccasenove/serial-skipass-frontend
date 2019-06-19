@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
+import {Observable, of} from 'rxjs';
+import {Resort} from './resort';
 
 const FORFAIT_ID = 200;
 
@@ -21,7 +22,7 @@ export class ForfaitService {
     return this.httpClient.put(`${API_ROOT}/forfaits/${FORFAIT_ID}/stop`, null);
   }
 
-  public getResorts() {
-    return of([{id: 1, name: 'La Clusaz'},{id: 2, name: 'La Feclaz'}, {id: 3, name: 'Le revard'}]);
+  public getResorts(): Observable<Resort[]> {
+    return this.httpClient.get<Resort[]>(`${API_ROOT}/resorts`);
   }
 }

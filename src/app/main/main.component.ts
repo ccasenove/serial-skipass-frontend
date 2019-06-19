@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ForfaitService } from '../forfait.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {Resort} from '../resort';
 
 const stationId = '666';
 
@@ -12,14 +13,14 @@ const stationId = '666';
 export class MainComponent implements OnInit {
 
   form: FormGroup;
-  stations = [];
-  
+  stations: Resort[];
+
   constructor(
     private formBuilder: FormBuilder,
-    private forfaitService: ForfaitService) { 
+    private forfaitService: ForfaitService) {
       this.form = formBuilder.group({
         station: 1
-      })
+      });
     }
 
   ngOnInit() {

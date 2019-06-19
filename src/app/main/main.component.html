@@ -2,7 +2,7 @@
   <div class="form-group">
     <label for="select-station">Choisir la station: </label>
     <select id="select-station" formControlName="station" class="form-control form-control-lg">
-      <option *ngFor="let station of stations" [value]="station.id">{{station.name}}</option>
+      <option *ngFor="let station of stations" [value]="station.idResort">{{station.resortName}}</option>
     </select>
   </div>
 </form>

@@ -5,17 +5,22 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
+import { MonthInvoiceComponent } from './month-invoice/month-invoice.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    MonthInvoiceComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
